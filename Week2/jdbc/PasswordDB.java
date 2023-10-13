@@ -61,13 +61,18 @@ public class PasswordDB {
   
     Connection connection = null;
     
+    Scanner newPassReader = new Scanner(System.in);
+    System.out.print("Enter new password: ");
+
+    String newPass = newPassReader.nextLine();
+
     try {
 	// Establish the connection to the DB	
       connection = getConnection();
 
       // Create a mySQL statement and execute
       // This is an example! The password is hard coded but should not be
-      String sql = "SET PASSWORD = PASSWORD('bluepainting')";
+      String sql = "SET PASSWORD = PASSWORD('" + newPass + "')";
       Statement stmt = connection.createStatement();
       stmt.executeQuery(sql);
       stmt.close();
