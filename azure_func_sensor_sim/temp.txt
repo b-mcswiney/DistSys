@@ -1,0 +1,1 @@
+Server=tcp:distsys.database.windows.net,1433;Initial Catalog=coursework 2;Persist Security Info=False;User ID=ed20b3mdistsys;Password=distsysed20b3m123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;

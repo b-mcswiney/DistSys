@@ -38,7 +38,6 @@ public class CreateDB {
     return DriverManager.getConnection(url, user, password);
   }
 
-
   /**
    * Creates a table to hold the data.
    *
