@@ -1,0 +1,18 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "name": "mytimer",
+      "type": "timerTrigger",
+      "direction": "in",
+      "schedule": "*/5 * * * * *"
+    },
+    {
+      "type": "sql",
+      "direction": "out",
+      "name": "dataSimItems",
+      "commandText": "dbo.sim_data",
+      "connectionStringSetting": "SqlConnectionString"
+    }
+  ]
+}

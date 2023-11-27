@@ -1,0 +1,13 @@
+Server=tcp:distsys.database.windows.net,1433;Initial Catalog=coursework 2;Persist Security Info=False;User ID=ed20b3mdistsys;Password=distsysed20b3m123.;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
+
+
+{
+    "sensor_id": 2,
+    "temperature": 40,
+    "wind_speedW: 20,
+    "humidity": 30,
+    "co2": 30
+}
+
+ {"sensor_id": 2,     "temperature": 40,     "wind_speed": 20,     "humidity": 30,     "co2": 30 }
+ 
