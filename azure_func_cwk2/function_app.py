@@ -16,22 +16,25 @@ app = func.FunctionApp(http_auth_level=func.AuthLevel.ANONYMOUS)
 def data_sim(req: func.HttpRequest, dataSimItems: func.Out[func.SqlRow]) -> func.HttpResponse:
     logging.info('Python HTTP trigger function processed a request.')
 
-    # data_lines_gen = req.params.get('data_lines_to_gen')
+    data_lines_gen = req.params.get('iterations')
 
-    # req_body = req.get_json()
+    req_body = req.get_json()
 
-    # if not data_lines_gen:
-    #     try:
-    #         req_body = req.get_json()
-    #     except ValueError:
-    #         pass
-    #     else:
-    #         data_lines_gen = req_body.get('data_lines_to_gen')
+    if not data_lines_gen:
+        try:
+            req_body = req.get_json()
+        except ValueError:
+            data_lines_gen = 20
+        else:
+            data_lines_gen = req_body.get('iterations')
 
     count = 0
     data = []
 
-    while count < 20:
+    if not isinstance(data_lines_gen, int):
+        data_lines_gen = 20
+
+    while count < data_lines_gen:
         temperature = random.randint(8, 15)
         wind_speed = random.randint(15, 25)
         humidity = random.randint(40, 70)

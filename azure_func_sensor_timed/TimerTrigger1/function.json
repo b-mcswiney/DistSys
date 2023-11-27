@@ -5,7 +5,7 @@
       "name": "mytimer",
       "type": "timerTrigger",
       "direction": "in",
-      "schedule": "5,10,15,20,25,30,40,45,50,55 * * * * *"
+      "schedule": "*/5 * * * * *"
     },
     {
       "type": "sql",
